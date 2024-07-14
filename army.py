@@ -25,17 +25,28 @@ class units(db.Model):
         self.skill = skill
 
 
+class MyForm(FlaskForm):
+    id = IntegerField('id', validators=[DataRequired()])
+    unit = StringField('unit', validators=[DataRequired()])
+    damage = IntegerField('damage', validators=[DataRequired()])       
+    armor = IntegerField('armor', validators=[DataRequired()]) 
+    skill = IntegerField('skill', validators=[DataRequired()]) 
+
+
 @app.route("/")
 def hello():
     return 'Создай свою армию если не трус'
 
 
-@app.route("/q", methods = ['GET', 'POST'])
-def u():
+@app.route("/all_units", methods = ['GET', 'POST'])
+def all_units():
     x = units.query.all()
-    for i in x:
-        print (i.unit)
-    return 'список воинов в консоли'
+    # for i in x:
+    #     print (i.unit)
+    return render_template('main.html', un = x )
+
+
+
 
 
 
