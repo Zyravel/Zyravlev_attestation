@@ -1,5 +1,28 @@
-/* h1{
-    font-size: 60;
-    color: hsl(0, 80%, 45%);
+html {
+    background-color: #5b6166;
+  }
 
-} */
+
+h1{
+    color: rgb(220, 60, 20);
+    text-align: center;
+}
+
+
+
+img{
+    height:500px ;
+    margin: 10px auto 20px;
+    display: block;
+}    
+
+p{
+    font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+form{font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+}

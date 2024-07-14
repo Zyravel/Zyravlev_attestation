@@ -58,21 +58,6 @@ def new():
     return render_template('wtf.html', form = form)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     app.config['WTF_CSRF_ENABLED'] = False
     app.run()

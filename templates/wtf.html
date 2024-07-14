@@ -1,3 +1,6 @@
+<html>
+<head>
+    <link rel = "stylesheet" href = './static/css/styles.css' >
 <form method="POST">
     {{form.unit.label}}{{form.unit()}}
     {{form.damage.label}}{{form.damage()}}
@@ -8,3 +11,5 @@
  </form>
 <p><a href="{{url_for('start')}}">убежать на главную страницу</p>
 <p><a href="{{url_for('all_units')}}">посмотреть всех имеющихся бойцов</p>
+</head>
+</html>

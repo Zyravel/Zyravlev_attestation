@@ -1,27 +1,29 @@
 <html>
-    <head>
-        <link rel = "stylesheet" href = '//styles.css' >
-    </head>
-        <h1>Нужно больше, ещё больше воинов</h1>
-        <img src="../static/img/rojer.png">
-        <p><a href="{{url_for('new')}}">создать воина</p>
-        <p><a href="{{url_for('start')}}">убежать на главную страницу</p>
-    <p></p>
-        <table border="2">
-            <tr>
-            <th> unit </th>
-            <th> damage </th>
-            <th> bill </th>
-            <th> bill </th>
-            </tr>
-            {% for unit in un %}
-            <tr>
-            <th> {{unit.unit}} </th>
-            <th> {{unit.damage}} </th>
-            <th> {{unit.armor}} </th>
-            <th> {{unit.skill}} </th>
-            </tr>
-            {% endfor %}
-            </table>  
+<head>
+    <link rel = "stylesheet" href = './static/css/styles.css' >
 
+    <h1>Нужно больше, ещё больше воинов</h1>
+</head>
+    <img src="../static/img/rojer.png">
+    <p><a href="{{url_for('new')}}">создать воина</p>
+    <p><a href="{{url_for('start')}}">убежать на главную страницу</p>
+    <p></p>
+<body>
+    <table border="2">
+        <tr>
+        <th> unit </th>
+        <th> damage </th>
+        <th> armor </th>
+        <th> skill </th>
+        </tr>
+        {% for unit in un %}
+        <tr>
+        <th> {{unit.unit}} </th>
+        <th> {{unit.damage}} </th>
+        <th> {{unit.armor}} </th>
+        <th> {{unit.skill}} </th>
+        </tr>
+        {% endfor %}
+     </table>  
+</body>
 </html>
