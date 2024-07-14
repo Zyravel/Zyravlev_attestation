@@ -1,26 +1,25 @@
 <html>
     <head>
-        <link rel = "stylesheet" href = '///styles.css' >
+        <link rel = "stylesheet" href = '//styles.css' >
     </head>
-<h1>Нужно больше, ещё больше воинов</h1>
-<p></p>
-    <table border="2">
-        <tr>
-        <th class="th"> id  </th>
-        <th class="th"> unit </th>
-        <th class="th"> damage </th>
-        <th class="th"> bill </th>
-        <th class="th"> bill </th>
-        </tr>
-        {% for unit in un %}
-        <tr>
-        <th> {{unit.id}} </th>
-        <th> {{unit.unit}} </th>
-        <th> {{unit.damage}} </th>
-        <th> {{unit.armor}} </th>
-        <th> {{unit.skill}} </th>
-        </tr>
-        {% endfor %}
-        </table>  
+        <h1>Нужно больше, ещё больше воинов</h1>
+
+    <p></p>
+        <table border="2">
+            <tr>
+            <th> unit </th>
+            <th> damage </th>
+            <th> bill </th>
+            <th> bill </th>
+            </tr>
+            {% for unit in un %}
+            <tr>
+            <th> {{unit.unit}} </th>
+            <th> {{unit.damage}} </th>
+            <th> {{unit.armor}} </th>
+            <th> {{unit.skill}} </th>
+            </tr>
+            {% endfor %}
+            </table>  
 
 </html>

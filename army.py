@@ -17,8 +17,7 @@ class units(db.Model):
     armor = db.Column(db.Integer)
     skill = db.Column(db.String(100))
 
-    def __init__(self, id, unit, damage, armor, skill):
-        self.id = id
+    def __init__(self, unit, damage, armor, skill):
         self.unit = unit
         self.damage = damage
         self.armor = armor
@@ -26,27 +25,37 @@ class units(db.Model):
 
 
 class MyForm(FlaskForm):
-    id = IntegerField('id', validators=[DataRequired()])
     unit = StringField('unit', validators=[DataRequired()])
     damage = IntegerField('damage', validators=[DataRequired()])       
     armor = IntegerField('armor', validators=[DataRequired()]) 
-    skill = IntegerField('skill', validators=[DataRequired()]) 
+    skill = StringField('skill', validators=[DataRequired()]) 
 
 
 @app.route("/")
 def hello():
-    return 'Создай свою армию если не трус'
+    return render_template('start_p.html')
 
 
 @app.route("/all_units", methods = ['GET', 'POST'])
 def all_units():
     x = units.query.all()
-    # for i in x:
-    #     print (i.unit)
     return render_template('main.html', un = x )
 
 
-
+@app.route("/new", methods = ['GET', 'POST'])
+def wt():
+    form = MyForm()
+    if form.validate_on_submit():
+        res_unit = form.data['unit']
+        res_damage = form.data['damage']
+        res_armor = form.data['armor']
+        res_skill = form.data['skill']
+        new_user = units(res_unit, res_damage, res_armor, res_skill)
+        db.session.add(new_user)
+        db.session.commit()
+        x = units.query.all()
+        return render_template('main.html', un = x )
+    return render_template('wtf.html', form = form)
 
 
 
