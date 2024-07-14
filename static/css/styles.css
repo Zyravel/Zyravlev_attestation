@@ -1,14 +1,12 @@
-html {
+html{
     background-color: #5b6166;
   }
 
-
 h1{
-    color: rgb(220, 60, 20);
+    color: rgb(131, 145, 9);
     text-align: center;
+    font-size: 50px;
 }
-
-
 
 img{
     height:500px ;
@@ -22,7 +20,12 @@ p{
   font-weight: bold;
 }
 
-form{font-family: Georgia, 'Times New Roman', Times, serif;
-
+.form{
+    font-size: 150%;
 
 }
+
+.tr{background-color: rgb(53, 48, 44);
+    font-size: 40px;
+}
+

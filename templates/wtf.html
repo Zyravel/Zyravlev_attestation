@@ -2,11 +2,13 @@
 <head>
     <link rel = "stylesheet" href = './static/css/styles.css' >
 <form method="POST">
-    {{form.unit.label}}{{form.unit()}}
+    <p class="form">{{form.unit.label}}{{form.unit()}}
     {{form.damage.label}}{{form.damage()}}
     {{form.armor.label}}{{form.armor()}}
     {{form.skill.label}}{{form.skill()}}
+
     <input type = "submit" value = "добавить боевую единицу">
+    </p>
     
  </form>
 <p><a href="{{url_for('start')}}">убежать на главную страницу</p>
