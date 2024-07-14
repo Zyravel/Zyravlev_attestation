@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import *
 from wtforms.validators import DataRequired
@@ -32,7 +32,7 @@ class MyForm(FlaskForm):
 
 
 @app.route("/")
-def hello():
+def start():
     return render_template('start_p.html')
 
 
@@ -43,7 +43,7 @@ def all_units():
 
 
 @app.route("/new", methods = ['GET', 'POST'])
-def wt():
+def new():
     form = MyForm()
     if form.validate_on_submit():
         res_unit = form.data['unit']
