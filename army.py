@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 from flask_wtf import FlaskForm
 from wtforms import *
 from wtforms.validators import DataRequired
@@ -54,6 +54,7 @@ def new():
         db.session.add(new_user)
         db.session.commit()
         x = units.query.all()
+        print(1)
         return render_template('main.html', un = x )
     return render_template('wtf.html', form = form)
 
